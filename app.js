@@ -14,4 +14,15 @@ var secret = {
 
 const twitter = new twitter_pacakge( secret );
 
-console.log( secret );
+twitter.post( 'statuses/update',
+    {
+        status: 'Testing' 
+    },
+
+    function( error, tweet, response ) {
+
+      if( error ) {
+
+        console.log( error );
+      }
+});
